@@ -62,6 +62,7 @@ extension CoreDataStack {
             print(error.localizedDescription)
         }
         NotificationCenter.default.post(name: .newDataAvailable, object: nil)
+//        ViewModel.shared.currentTime = Date().description //Could also have tight binding and update viewmodel directly - same issue
     }
 }
 

@@ -6,12 +6,11 @@
 //
 
 import SwiftUI
-import CoreData
 
 class ViewModel: ObservableObject {
     static let shared = ViewModel()
 
-    init()
+    private init()
     {
         NotificationCenter.default.addObserver(self, selector: #selector(handleNewDataAvailable(notification:)), name: .newDataAvailable, object: nil)
     }
@@ -19,7 +18,6 @@ class ViewModel: ObservableObject {
     {
         NotificationCenter.default.removeObserver(self)
     }
-
 
     @Published var currentTime: String = ""
 
